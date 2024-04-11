@@ -1,0 +1,65 @@
+{
+  "name": "puppeteer-search-tools",
+  "version": "1.0.0",
+  "description": "Package for manage search in puppeteer",
+  "main": "lib/index.js",
+  "types": "./lib/index.d.js",
+  "scripts": {
+    "test": "jest",
+    "jest:coverage": "jest --coverage",
+    "build": "npx tsc",
+    "lint": "tslint -p tsconfig.json",
+    "prettify": "prettier --write \"src/**/*.ts\" \"src/**/*.js\"",
+    "prepare": "npm run build",
+    "prepublishOnly": "npm run test && npm run lint",
+    "preversion": "npm run lint",
+    "version": "npm run prettify && git add -A src",
+    "postversion": "git push && git push --tags",
+    "watch": "jest --watch --config jestconfig.json"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Roiner994/puppeteer-tools-search.git"
+  },
+  "keywords": [
+    "puppeteer",
+    "tools",
+    "ucropit"
+  ],
+  "author": "Roiner Hernandez",
+  "authors": [
+    "Roiner Hernandez"
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Roiner994/puppeteer-tools-search/issues"
+  },
+  "homepage": "https://github.com/Roiner994/puppeteer-tools-search#readme",
+  "devDependencies": {
+    "@types/jest": "^27.0.2",
+    "git-commit-msg-linter": "^3.2.8",
+    "husky": "^7.0.4",
+    "jest": "^27.3.1",
+    "prettier": "^2.4.1",
+    "ts-jest": "^27.0.7",
+    "tslint": "^6.1.3",
+    "tslint-config-prettier": "^1.18.0",
+    "typescript": "^4.4.4"
+  },
+  "files": [
+    "lib/**/*"
+  ],
+  "directories": {
+    "lib": "./lib/"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run prettify",
+      "pre-push": "npm run lint"
+    }
+  },
+  "bundledDependencies": true,
+  "dependencies": {
+    "puppeteer": "^10.4.0"
+  }
+}
