@@ -7,17 +7,17 @@ Package to search deferent elements
 First install [Node.js](http://nodejs.org/). Then:
 
 ```sh
-$ npm install puppeteer-tools-search
+$ npm install puppeteer-search-tools
 ```
 
 ## Importing
 
 ```javascript
 // Using Node.js `require()`
-const unitSystemConverter = require("puppeteer-tools-search");
+const unitSystemConverter = require("puppeteer-search-tools");
 
 // Using ES6 imports
-import * as unitSystemConverter from "puppeteer-tools-search";
+import * as unitSystemConverter from "puppeteer-search-tools";
 // Or
 import {
   findElementByText,
@@ -28,7 +28,7 @@ import {
 ### use findElementByText
 
 ```js
-const puppeteerTools = require("puppeteer-tools-search");
+const puppeteerTools = require("puppeteer-search-tools");
 const btnToContinue = await puppeteerTools.findElementByText(page, "Continue");
 await btnToContinue.click();
 ```
@@ -36,7 +36,7 @@ await btnToContinue.click();
 ### use setValueToInputByPlaceHolder
 
 ```js
-const puppeteerTools = require("puppeteer-tools-search");
+const puppeteerTools = require("puppeteer-search-tools");
 await puppeteerTools.setValueToInputByPlaceHolder(
   page,
   "Email",
